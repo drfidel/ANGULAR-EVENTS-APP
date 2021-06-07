@@ -32,3 +32,5 @@
   .toast-warning {
     background-color: #f89406;
   }
+
+  @import '~ngx-toastr/toastr.css';

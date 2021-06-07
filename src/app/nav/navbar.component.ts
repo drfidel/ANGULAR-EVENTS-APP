@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../user';
 
 @Component({
     selector: 'nav-bar',
@@ -8,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
         .nav.navbar-nav {font-size: 15px;}
         #searchForm {margin-right: 100px;}
         @media (max-width: 1200px) {searchForm {display:none}}
+        li > a.active { color: #F97924; }
     `]
 })
 
 export class NavBarComponent implements OnInit {
-    constructor() { }
+    constructor(public auth:AuthService) { }
 
     ngOnInit() { }
 }
