@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';    
 import { ToastrModule } from 'ngx-toastr';
 
+
+
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from "./nav/index";
 import { appRoutes } from "./routes";
@@ -35,7 +37,7 @@ import { EventService,
     BrowserModule,
     BrowserAnimationsModule,  
     ToastrModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     EventService, 
