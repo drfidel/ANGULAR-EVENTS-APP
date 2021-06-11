@@ -21,7 +21,8 @@ import { EventService,
          EventsListComponent,
          CreateEventComponent,
          EventListResolver,
-         EventRouteActivator
+         EventRouteActivator,
+         CreateSessionComponent
 
            } from "./events/index";
 
@@ -33,6 +34,7 @@ import { EventService,
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    CreateSessionComponent,
     Error404Component
   ],
   imports: [
