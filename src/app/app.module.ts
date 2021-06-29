@@ -22,7 +22,8 @@ import { EventService,
          CreateEventComponent,
          EventListResolver,
          EventRouteActivator,
-         CreateSessionComponent
+         CreateSessionComponent,
+         SessionListComponent,
 
            } from "./events/index";
 
@@ -35,7 +36,8 @@ import { EventService,
     EventDetailsComponent,
     CreateEventComponent,
     CreateSessionComponent,
-    Error404Component
+    Error404Component,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,
