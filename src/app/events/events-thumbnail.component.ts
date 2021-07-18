@@ -8,13 +8,13 @@ import { IEvent } from './shared';
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">    
         <h2>{{event.name | uppercase}}</h2>
             <div><img src="{{event.imageUrl}}" alt={{event.name}} class="event-image"></div>
-        <div>Date:  {{event.date}}</div>
+        <div>Date:  {{event.date|date:'shortDate'}}</div>
         <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">Time:  {{event.time}}
                 <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
                 <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
                 <span *ngSwitchDefault>(Normal Start)</span>
         </div>
-        <div>Price:  \${{event.Price}}</div>
+        <div>Price:  {{event.Price|currency:'USD'}}</div>
         <div>
             <span>Location: {{event.location.address}}</span>
             <span class="pad-left">{{event.location.City}},{{event.location.Country}} </span>  

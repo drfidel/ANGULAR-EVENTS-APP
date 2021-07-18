@@ -25,7 +25,7 @@ import { EventService,
          EventRouteActivator,
          CreateSessionComponent,
          SessionListComponent,
-
+         DurationPipe,
            } from "./events/index";
 
 @NgModule({
@@ -40,6 +40,7 @@ import { EventService,
     Error404Component,
     SessionListComponent,
     CollapsibleWellComponent,
+    DurationPipe,
   ],
   imports: [
     BrowserModule,
