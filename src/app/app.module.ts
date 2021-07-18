@@ -11,6 +11,7 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from "./nav/index";
 import { appRoutes } from "./routes";
 import { RouterModule } from '@angular/router';
+import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 import { Error404Component } from "./errors/index";
 
 import { AuthService } from "./user/index"
@@ -38,6 +39,7 @@ import { EventService,
     CreateSessionComponent,
     Error404Component,
     SessionListComponent,
+    CollapsibleWellComponent,
   ],
   imports: [
     BrowserModule,

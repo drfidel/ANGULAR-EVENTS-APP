@@ -6,7 +6,7 @@ import { IEvent } from './shared';
     selector: 'event-thumbnail',
     template: `
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">    
-        <h2>{{event.name}}</h2>
+        <h2>{{event.name | uppercase}}</h2>
             <div><img src="{{event.imageUrl}}" alt={{event.name}} class="event-image"></div>
         <div>Date:  {{event.date}}</div>
         <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">Time:  {{event.time}}
