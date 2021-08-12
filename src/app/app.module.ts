@@ -4,9 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
-
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from "./nav/index";
 import { appRoutes } from "./routes";
@@ -14,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 import { Error404Component } from "./errors/index";
 
+import { TOASTR_TOKEN,Toastr } from "./common/toastr.service";
 import { AuthService } from "./user/index"
 
 import { EventService,
@@ -27,6 +25,9 @@ import { EventService,
          SessionListComponent,
          DurationPipe,
            } from "./events/index";
+
+let toastr: Toastr = (window as any)['toastr'];
+
 
 @NgModule({
   declarations: [
@@ -47,11 +48,13 @@ import { EventService,
     BrowserAnimationsModule, 
     FormsModule,
     ReactiveFormsModule, 
-    ToastrModule.forRoot(),
+    //ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [
     EventService, 
+    { provide: TOASTR_TOKEN, 
+      useValue: toastr},
     EventRouteActivator,
     EventListResolver,
     AuthService,
