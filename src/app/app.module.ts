@@ -8,10 +8,10 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from "./nav/index";
 import { appRoutes } from "./routes";
 import { RouterModule } from '@angular/router';
-import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 import { Error404Component } from "./errors/index";
 
-import { TOASTR_TOKEN,Toastr } from "./common/toastr.service";
+import { JQ_TOKEN,TOASTR_TOKEN,Toastr, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective} from "./common/index";
+
 import { AuthService } from "./user/index"
 
 import { EventService,
@@ -24,9 +24,12 @@ import { EventService,
          CreateSessionComponent,
          SessionListComponent,
          DurationPipe,
+         UpvoteComponent,
+         VoterService,
            } from "./events/index";
 
 let toastr: Toastr = (window as any)['toastr'];
+let jQuery = (window as any)['$'];
 
 
 @NgModule({
@@ -42,6 +45,9 @@ let toastr: Toastr = (window as any)['toastr'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective,
+    UpvoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +61,11 @@ let toastr: Toastr = (window as any)['toastr'];
     EventService, 
     { provide: TOASTR_TOKEN, 
       useValue: toastr},
+    { provide: JQ_TOKEN, 
+        useValue: jQuery},
     EventRouteActivator,
     EventListResolver,
+    VoterService,
     AuthService,
     {  provide: 'canDeactivateCreateEvent',
        useValue: checkDirtyState}],
