@@ -14,6 +14,8 @@ import { JQ_TOKEN,TOASTR_TOKEN,Toastr, CollapsibleWellComponent, SimpleModalComp
 
 import { AuthService } from "./user/index"
 
+import { HttpClient, HttpClientModule } from '@angular/common/http'
+
 import { EventService,
          EventDetailsComponent,
          EventThumbnailComponent,
@@ -58,6 +60,7 @@ let jQuery = (window as any)['$'];
     ReactiveFormsModule, 
     //ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [
     EventService, 
