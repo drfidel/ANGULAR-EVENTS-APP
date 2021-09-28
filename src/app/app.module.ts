@@ -26,6 +26,7 @@ import { EventService,
          DurationPipe,
          UpvoteComponent,
          VoterService,
+         LocationValidator,
            } from "./events/index";
 
 let toastr: Toastr = (window as any)['toastr'];
@@ -48,6 +49,7 @@ let jQuery = (window as any)['$'];
     SimpleModalComponent,
     ModalTriggerDirective,
     UpvoteComponent,
+    LocationValidator,
   ],
   imports: [
     BrowserModule,
