@@ -22,13 +22,13 @@ import { EventService,
          EventsListComponent,
          CreateEventComponent,
          EventListResolver,
-         EventRouteActivator,
          CreateSessionComponent,
          SessionListComponent,
          DurationPipe,
          UpvoteComponent,
          VoterService,
          LocationValidator,
+         EventResolver,
            } from "./events/index";
 
 let toastr: Toastr = (window as any)['toastr'];
@@ -68,7 +68,7 @@ let jQuery = (window as any)['$'];
       useValue: toastr},
     { provide: JQ_TOKEN, 
         useValue: jQuery},
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     VoterService,
     AuthService,
